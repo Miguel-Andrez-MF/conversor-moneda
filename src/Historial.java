@@ -1,6 +1,4 @@
 import java.io.*;
-import java.util.ArrayList;
-import java.util.List;
 
 public class Historial {
     private static final String ARCHIVO = "historial.txt";
