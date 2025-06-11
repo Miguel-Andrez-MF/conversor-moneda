@@ -5,22 +5,6 @@ import java.util.List;
 public class Historial {
     private static final String ARCHIVO = "historial.txt";
 
-    public static List<String> cargar() {
-        List<String> historial = new ArrayList<>();
-        File archivo = new File(ARCHIVO);
-        if (archivo.exists()) {
-            try (BufferedReader reader = new BufferedReader(new FileReader(archivo))) {
-                String linea;
-                while ((linea = reader.readLine()) != null) {
-                    historial.add(linea);
-                }
-            } catch (IOException e) {
-                System.out.println("Error al leer historial: " + e.getMessage());
-            }
-        }
-        return historial;
-    }
-
     public static void guardar(String entrada) {
         try (FileWriter writer = new FileWriter(ARCHIVO, true)) {
             writer.write(entrada + "\n");
